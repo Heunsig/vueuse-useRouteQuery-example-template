@@ -6,12 +6,12 @@ import vueuseLogo from '@/assets/vueuse.svg';
 
 <template>
   <div class="py-10">
-    <div class="mx-auto max-w-7xl">
+    <header class="mx-auto max-w-7xl">
       <h1 class="flex items-center gap-1 text-2xl font-bold">
         <img :src="vueuseLogo" alt="logo" class="w-7 h-7" />
         vueuse `useRouteQuery` Example
       </h1>
-    </div>
+    </header>
     <div class="grid grid-cols-12 py-10 mx-auto max-w-7xl">
       <div class="col-span-3">
         <Filter class="sticky top-5"/>
