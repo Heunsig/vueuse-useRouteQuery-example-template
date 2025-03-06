@@ -1,31 +1,10 @@
 <script setup>
 import { computed } from 'vue'
-import { useRoute } from 'vue-router'
 import { products as mockProducts } from '@/mock/products'
 
-const route = useRoute()
-
-const category = computed(() => route.query.category ?? 'All')
-const name = computed(() => route.query.name ?? '')
-const minPrice = computed(() => route.query.minPrice ?? null)
-const maxPrice = computed(() => route.query.maxPrice ?? null)
-const description = computed(() => route.query.description ?? '')
-
 const filteredProducts = computed(() => {
-  return mockProducts.filter(product => product.name.toLocaleLowerCase().includes(name.value.toLocaleLowerCase()))
-                        .filter(product => minPrice.value ? product.price >= minPrice.value : true)
-                        .filter(product => maxPrice.value ? product.price <= maxPrice.value : true)
-                        .filter(product => category.value === 'All' ? true : product.category === category.value)
-                        .filter(product => description.value ? product.description.toLocaleLowerCase().includes(description.value.toLocaleLowerCase()) : true)
-})  
-
-function formatDate(date) {
-  return new Date(date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  })
-}
+  return mockProducts
+})
 
 function formatPrice(price) {
   return new Intl.NumberFormat('en-US').format(price)

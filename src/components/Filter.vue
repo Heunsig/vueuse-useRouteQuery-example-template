@@ -8,23 +8,16 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { Input } from '@/components/ui/input'
-import { useRouteQuery } from '@vueuse/router';
 import { products } from '@/mock/products'
 
 const categories = ["All", ...new Set(products.map(product => product.category))]
-
-const category = useRouteQuery('category', 'All', { transform: String } )
-const name = useRouteQuery('name', '')
-const minPrice = useRouteQuery('minPrice', null, { transform: Number })
-const maxPrice = useRouteQuery('maxPrice', null, { transform: Number })
-const description = useRouteQuery('description', '')
 
 </script>
 <template>
   <div class="w-full space-y-6">
     <div>
       <label>Category</label>
-      <Select v-model="category">
+      <Select >
         <SelectTrigger>
           <SelectValue placeholder="Select Category" />
         </SelectTrigger>
@@ -39,19 +32,19 @@ const description = useRouteQuery('description', '')
     </div>
     <div>
       <label>Name</label>
-      <Input type="text" placeholder="Product Name" v-model="name"/>
+      <Input type="text" placeholder="Product Name"/>
     </div>
 
     <div>
       <label>Price</label>
       <div class="flex gap-2">
-        <Input type="number" placeholder="Min Price" v-model="minPrice"/>
-        <Input type="number" placeholder="Max Price" v-model="maxPrice"/>
+        <Input type="number" placeholder="Min Price" />
+        <Input type="number" placeholder="Max Price" />
       </div>
     </div>
     <div>
       <label>Description</label>
-      <Input type="text" placeholder="Description" v-model="description"/>
+      <Input type="text" placeholder="Description" />
     </div>
   </div>
 </template>
