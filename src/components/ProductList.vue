@@ -21,9 +21,12 @@ function formatPrice(price) {
       >
         <div class="space-y-3">
           <div class="flex items-center justify-between">
-            <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
-              {{ product.name }}
-            </h3>
+            <div class="flex items-center gap-2">
+              <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
+                {{ product.name }} 
+              </h3>
+              <span v-if="product.soldOut" class="text-sm text-red-500 ">Sold Out</span>
+            </div>
             <span class="font-medium text-zinc-900 dark:text-zinc-50">
               ${{ formatPrice(product.price) }}
             </span>

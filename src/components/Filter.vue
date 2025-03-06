@@ -7,6 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import { Checkbox } from '@/components/ui/checkbox'
 import { Input } from '@/components/ui/input'
 import { products } from '@/mock/products'
 
@@ -45,6 +46,10 @@ const categories = ["All", ...new Set(products.map(product => product.category))
     <div>
       <label>Description</label>
       <Input type="text" placeholder="Description" />
+    </div>
+    <div class="flex items-center gap-2">
+      <label>Sold Out</label>
+      <Checkbox v-model="soldOut"/>
     </div>
   </div>
 </template>

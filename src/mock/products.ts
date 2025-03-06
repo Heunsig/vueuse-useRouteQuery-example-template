@@ -4,7 +4,8 @@ export const products = [
     name: "Wireless Headphones",
     price: 99.99,
     description: "High-quality wireless headphones with noise cancellation.",
-    category: "Electronics"
+    category: "Electronics",
+    soldOut: true
   },
   {
     id: 2,
@@ -81,7 +82,8 @@ export const products = [
     name: "Smartphone Tripod",
     price: 22.99,
     description: "Adjustable tripod stand for smartphones and cameras.",
-    category: "Electronics"
+    category: "Electronics",
+    soldOut: true
   },
   {
     id: 13,
@@ -165,7 +167,8 @@ export const products = [
     name: "Noise Cancelling Headphones",
     price: 129.99,
     description: "Wireless noise-canceling headphones with deep bass.",
-    category: "Electronics"
+    category: "Electronics",
+    soldOut: true
   },
   {
     id: 25,
@@ -214,7 +217,8 @@ export const products = [
     name: "LED Desk Lamp",
     price: 29.99,
     description: "Adjustable LED desk lamp with touch control and dimming modes.",
-    category: "Office Supplies"
+    category: "Office Supplies",
+    soldOut: true
   },
   {
     id: 32,
@@ -263,6 +267,7 @@ export const products = [
     name: "Ergonomic Office Chair",
     price: 299.99,
     description: "Adjustable ergonomic office chair with lumbar support.",
-    category: "Furniture"
+    category: "Furniture",
+    soldOut: true
   }
 ]
